@@ -81,8 +81,8 @@ $data2 = consultar($query);
                                     </a>
                                 </td>
 
-                                <?php $tt = drive($ruc, $reg['nombre'], $item['nombre']); ?>
-                                <?php if($tt > 0) {?>
+                                <?php $cant = drive($ruc, $reg['nombre'], $item['nombre']); ?>
+                                <?php if($cant > 0) {?>
                                 <td>
                                     <img src="imagenes/contenido.png" width="20" height="20">
                                     Contenido disponible

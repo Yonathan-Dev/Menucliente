@@ -26,8 +26,8 @@ $idhijo = $_GET['idhijo'];
                 <form action="validar.php" method="post">
                     <table class="table table-striped table-bordered">
                         <thead>
-                            <tr align="center">
-                                <th colspan="3">Datos generales</th>
+                            <tr class="card-title bg-muted text-warning" align="center">
+                                <th colspan="2">DATOS GENERALES</th>
                             </tr>
                         </thead>
 

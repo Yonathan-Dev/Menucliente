@@ -48,7 +48,7 @@ $data2 = consultar($query);
         <div class="col-12 mb-3">
             <div class="card bg-muted text-warning">
                 <div class="card-header" align="center">
-                    <h3 class="">Menu cliente</h3>
+                    <h3 class="">MENU</h3>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@ $data2 = consultar($query);
         <div class="col-12 col-sm-6 mb-3 ">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?= mb_strtoupper($reg['nombre'], 'UTF-8') ?></h5>
+                    <h5 class="card-title bg-muted text-warning"><?= mb_strtoupper($reg['nombre'], 'UTF-8') ?></h5>
                     <table class="table table-striped table-bordered table-light table-hover">
                         <thead>
                             <tr>

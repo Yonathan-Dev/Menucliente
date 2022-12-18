@@ -1,6 +1,4 @@
 <?php
-include 'libreria.php';
-
 $ruc = $_GET['ruc'];
 $nombrepadre = ucfirst(mb_strtolower(trim($_GET['nombrepadre']), 'UTF-8'));
 $idpadre = $_GET['idpadre'];
@@ -27,7 +25,7 @@ $idhijo = $_GET['idhijo'];
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr class="card-title bg-muted text-warning" align="center">
-                                <th colspan="2">DATOS GENERALES</th>
+                                <th colspan="2">Datos generales</th>
                             </tr>
                         </thead>
 

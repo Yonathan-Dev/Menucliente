@@ -41,7 +41,6 @@ $data2 = consultar($query);
     <title>Menu</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -65,7 +64,7 @@ $data2 = consultar($query);
                 <div class="card-body">
                     <h5 class="card-title bg-muted text-warning">
                         <img src=<?php echo imagen(mb_strtoupper($reg['nombre'], 'UTF-8')) ?> width="20" height="20">
-                        <?= ucfirst(mb_strtolower($reg['nombre'], 'UTF-8')) ?>
+                        <?= ucfirst(mb_strtoupper($reg['nombre'], 'UTF-8')) ?>
                     </h5>
                     <table class="table table-striped table-bordered table-light table-hover">
                         <thead>

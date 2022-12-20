@@ -31,7 +31,7 @@ $idhijo = $_GET['idhijo'];
 
                         <tbody>
                             <tr>
-                                <th style="width: 60%">RUC</th>
+                                <th style="width: 45%">RUC</th>
                                 <th><?=$ruc?></th>
                             </tr>
                             <tr>

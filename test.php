@@ -2,6 +2,8 @@
 $ruc = '10457406784';
 $nombrepadre = 'INFORMACIÓN PROYECTADA';
 $nombrehijo = 'FLUJO DE CAJA PROYECTADO';
+$idpadre = "";
+$idhijo = "";
 
 include 'api-google/vendor/autoload.php';
 
@@ -37,6 +39,7 @@ if(count($resultado)>0){
 
     foreach ($resultado as $data) {
         if ($data->name == $nombrepadre) {
+            $idpadre = $data->id;
             $optParams = array(
                 'pageSize' => 10,
                 'fields' => "nextPageToken, files(contentHints/thumbnail,fileExtension,iconLink,id,name,size,thumbnailLink,webContentLink,webViewLink,mimeType,parents)",
@@ -49,6 +52,7 @@ if(count($resultado)>0){
     
             foreach ($resultado as $data) {
                 if ($data->name == $nombrehijo) {
+                    $idhijo = $data->id;
                     $optParams = array(
                         'pageSize' => 10,
                         'fields' => "nextPageToken, files(contentHints/thumbnail,fileExtension,iconLink,id,name,size,thumbnailLink,webContentLink,webViewLink,mimeType,parents)",
@@ -58,16 +62,26 @@ if(count($resultado)>0){
                     $resultado = $service->files->listFiles(
                         $optParams
                     );
-                    var_dump(count($resultado));
-                    return count($resultado);
+
+                    $data = array(
+                        'cantidad' => count($resultado),
+                        'idpadre' => $idpadre,
+                        'idhijo' => $idhijo
+                    );
+                    echo $data['cantidad']."<br>";
+                    echo $data['idpadre'];
+                    var_dump($data);
                 }
             }
         }
     }
 }
-var_dump(0);
-return 0;
 
+return array(
+    'cantidad' => 0,
+    'idpadre' => $idpadre,
+    'idhijo' => $idhijo
+);
 
 /*echo "ACa<br>";
 

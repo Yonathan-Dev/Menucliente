@@ -64,7 +64,7 @@ $data2 = consultar($query);
                 <div class="card-body">
                     <h5 class="card-title bg-muted text-warning">
                         <img src=<?php echo imagen(mb_strtoupper($reg['nombre'], 'UTF-8')) ?> width="20" height="20">
-                        <?= ucfirst(mb_strtoupper($reg['nombre'], 'UTF-8')) ?>
+                        <?=ucfirst(mb_strtoupper($reg['nombre'], 'UTF-8'))?>
                     </h5>
                     <table class="table table-striped table-bordered table-light table-hover">
                         <thead>
@@ -76,18 +76,21 @@ $data2 = consultar($query);
                         <tbody>
                             <?php foreach ($data2 as $item) {?>
 
-                            <?php if($item['idpadre'] == $reg['iditemsistema']) {?>
+                            <?php if ($item['idpadre'] == $reg['iditemsistema']) {?>
                             <tr>
+                                <?php
+                                    $data = drive($ruc, $reg['nombre'], $item['nombre']);
+                                ?>
+
                                 <td>
                                     <img src="imagenes/item.png" width="20" height="20">
                                     <a
-                                        href="form_data.php?ruc=<?=$ruc?>&nombrepadre=<?=$reg['nombre']?>&idpadre=<?=$reg['iditemsistema']?>&nombrehijo=<?=$item['nombre']?>&idhijo=<?=$item['iditemsistema']?>">
-                                        <?= ucfirst(mb_strtolower(strtolower($item['nombre']), 'UTF-8'))  ?>
+                                        href="form_data.php?ruc=<?=$ruc?>&nombrepadre=<?=$reg['nombre']?>&idpadre=<?=$data['idpadre']?>&nombrehijo=<?=$item['nombre']?>&idhijo=<?=$data['idhijo']?>">
+                                        <?=ucfirst(mb_strtolower(strtolower($item['nombre']), 'UTF-8'))?>
                                     </a>
                                 </td>
 
-                                <?php $cant = drive($ruc, $reg['nombre'], $item['nombre']); ?>
-                                <?php if($cant > 0) {?>
+                                <?php if ($data['cantidad'] > 0) {?>
                                 <td>
                                     <img src="imagenes/contenido.png" width="20" height="20">
                                     Contenido disponible
@@ -97,7 +100,7 @@ $data2 = consultar($query);
                                     <img src="imagenes/sincontenido.png" width="20" height="20">
                                     Sin contenido
                                 </td>
-                                <?php } ?>
+                                <?php }?>
                             </tr>
                             <?php }?>
 
